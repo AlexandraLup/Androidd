@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">lab2</string>
+    <string name="aboutUs">Shop Online</string>
+    <string name="help">Detalii la numarul: 0741621233</string>
+    <string name="buttonMain">Optiuni</string>
+    <string name="password">password</string>
+    <string name="email">email</string>
+    <string name="login">Login</string>
+    <string name="login_label">LOGIN</string>
+
+</resources>
