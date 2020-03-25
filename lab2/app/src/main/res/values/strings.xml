@@ -7,5 +7,7 @@
     <string name="email">email</string>
     <string name="login">Login</string>
     <string name="login_label">LOGIN</string>
+    <string name="sensors">Sensors</string>
+    <string name="coordonate">Coordonate</string>
 
 </resources>

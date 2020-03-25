@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lab2">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FileUploadActivity"></activity>
+        <activity
+            android:name=".LocationActivity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Optiuni" />
+        </activity>
+
+        <activity
+            android:name=".SensorsActivity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".FileUploadActivity"
+            android:parentActivityName=".Optiuni">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Optiuni" />
+        </activity>
         <activity
             android:name=".SettingsActivity"
             android:parentActivityName=".MainActivity">

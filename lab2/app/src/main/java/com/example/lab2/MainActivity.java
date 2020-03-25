@@ -1,11 +1,8 @@
 package com.example.lab2;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -20,10 +17,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.preference.PreferenceFragment;
 
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -37,7 +31,27 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d("lifecycle", "Create");
+
+
+        listView = (ListView)findViewById(R.id.listView);
+        t1 = (TextView) findViewById(R.id.textView);
+        t2 = (TextView) findViewById(R.id.textView4);
         button = (Button) findViewById(R.id.button);
+
+
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, products);
+        listView.setAdapter(arrayAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                t1.setText("Elementul" + position );
+            }
+        });
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,21 +60,6 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
             }
         });
 
-        Log.d("lifecycle", "Create");
-        listView = (ListView)findViewById(R.id.listView);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, products);
-        listView.setAdapter(arrayAdapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                t1 = (TextView) findViewById(R.id.textView);
-                t1.setText("Elementul" + position );
-            }
-        });
-
-
-        t2 = (TextView) findViewById(R.id.textView4);
         setupSharedPreferences();
     }
 
@@ -176,6 +175,14 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
             case R.id.item4:
                 Intent intent4 = new Intent(MainActivity.this, SettingsActivity.class);
                 startActivity(intent4);
+                return true;
+            case R.id.item5:
+                Intent intent5 = new Intent(MainActivity.this, SensorsActivity.class);
+                startActivity(intent5);
+                return true;
+            case R.id.item6:
+                Intent intent6 = new Intent(MainActivity.this, LocationActivity.class);
+                startActivity(intent6);
                 return true;
 
             default:
