@@ -184,6 +184,10 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
                 Intent intent6 = new Intent(MainActivity.this, LocationActivity.class);
                 startActivity(intent6);
                 return true;
+            case R.id.item7:
+                Intent intent7 = new Intent(MainActivity.this, CameraActivity.class);
+                startActivity(intent7);
+                return true;
 
             default:
                 return super.onOptionsItemSelected(item);

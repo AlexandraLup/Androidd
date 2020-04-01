@@ -9,5 +9,6 @@
     <string name="login_label">LOGIN</string>
     <string name="sensors">Sensors</string>
     <string name="coordonate">Coordonate</string>
+    <string name="photo">Take a photo</string>
 
 </resources>

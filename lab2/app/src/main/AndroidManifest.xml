@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lab2">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CameraActivity"></activity>
         <activity
             android:name=".LocationActivity"
             android:parentActivityName=".MainActivity">
@@ -18,7 +22,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Optiuni" />
         </activity>
-
         <activity
             android:name=".SensorsActivity"
             android:parentActivityName=".MainActivity">
